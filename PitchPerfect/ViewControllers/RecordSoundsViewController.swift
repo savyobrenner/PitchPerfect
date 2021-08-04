@@ -58,18 +58,17 @@ class RecordSoundsViewController: UIViewController {
         try! session.setCategory(AVAudioSession.Category.playAndRecord, mode: AVAudioSession.Mode.default, options: AVAudioSession.CategoryOptions.defaultToSpeaker)
         
         try! audioRecorder = AVAudioRecorder(url: filePath!, settings: [:])
+        audioRecorder.delegate = self
         audioRecorder.isMeteringEnabled = true
         audioRecorder.prepareToRecord()
         audioRecorder.record()
-        
-        audioRecorder.delegate = self
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == Strings.segueIdentifier {
             guard let playSoundsViewController = segue.destination as? PlaySoundsViewController,
                   let recordedAudioURL = sender as? URL else { return }
-            playSoundsViewController.recordAudioURL = recordedAudioURL
+            playSoundsViewController.recordedAudioURL = recordedAudioURL
         }
     }
     
@@ -88,6 +87,7 @@ class RecordSoundsViewController: UIViewController {
 // MARK: AVAudio Delegate
 extension RecordSoundsViewController: AVAudioRecorderDelegate {
     func audioRecorderDidFinishRecording(_ recorder: AVAudioRecorder, successfully flag: Bool) {
+        print(recorder.deviceCurrentTime)
         if flag {
             performSegue(withIdentifier: Strings.segueIdentifier, sender: audioRecorder.url)
         } else {
