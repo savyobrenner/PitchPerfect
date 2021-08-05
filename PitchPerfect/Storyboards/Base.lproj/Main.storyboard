@@ -18,6 +18,9 @@
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap to Record" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ngc-Ym-AhD">
                                 <rect key="frame" x="154" y="535.5" width="106" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="ZsA-1u-yiO"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -50,6 +53,7 @@
                             <constraint firstItem="6dR-T7-JKo" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="jKX-mb-V4Y"/>
                             <constraint firstItem="Mf9-rB-E2z" firstAttribute="centerX" secondItem="ngc-Ym-AhD" secondAttribute="centerX" id="rbi-b4-7Zk"/>
                             <constraint firstItem="Mf9-rB-E2z" firstAttribute="top" secondItem="ngc-Ym-AhD" secondAttribute="bottom" constant="10" id="uFL-Pe-zwP"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Mf9-rB-E2z" secondAttribute="bottom" constant="20" id="wQx-Zj-KTX"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="I2f-Ev-zo7"/>
