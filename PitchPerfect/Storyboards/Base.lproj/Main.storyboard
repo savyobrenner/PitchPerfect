@@ -37,7 +37,6 @@
                                 </constraints>
                                 <state key="normal" image="Stop"/>
                                 <connections>
-                                    <action selector="recordAudio:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ow6-Xo-Gu1"/>
                                     <action selector="stopRecording:" destination="BYZ-38-t0r" eventType="touchUpInside" id="892-ib-M8l"/>
                                 </connections>
                             </button>
