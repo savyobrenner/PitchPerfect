@@ -48,7 +48,7 @@ class RecordSoundsViewController: UIViewController {
             try! audioSession.setActive(false)
             return
         }
-        
+    
         let dirPath = NSSearchPathForDirectoriesInDomains(.documentDirectory,.userDomainMask, true)[0] as String
         let recordingName = Strings.recordingName
         let pathArray = [dirPath, recordingName]
@@ -87,7 +87,6 @@ class RecordSoundsViewController: UIViewController {
 // MARK: AVAudio Delegate
 extension RecordSoundsViewController: AVAudioRecorderDelegate {
     func audioRecorderDidFinishRecording(_ recorder: AVAudioRecorder, successfully flag: Bool) {
-        print(recorder.deviceCurrentTime)
         if flag {
             performSegue(withIdentifier: Strings.segueIdentifier, sender: audioRecorder.url)
         } else {
