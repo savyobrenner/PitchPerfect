@@ -31,6 +31,7 @@ class RecordSoundsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         isRecording(false)
+        configureUI()
     }
     
     // MARK: Methods
@@ -38,6 +39,11 @@ class RecordSoundsViewController: UIViewController {
         stopRecordingButton.isEnabled = validator
         recordButton.isEnabled = !validator
         recordingLabel.text = validator ? Strings.recordingInProgress : Strings.tapToRecord
+    }
+    
+    private func configureUI() {
+        stopRecordingButton.imageView?.contentMode = .scaleAspectFit
+        recordButton.imageView?.contentMode = .scaleAspectFit
     }
     
     private func recordAudioMethod(stopRecording: Bool = false) {
